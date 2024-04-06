@@ -14,6 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Mine
   type: 0
+  cost:
+    type: 0
+    cost:
+    - 50
+    - 100
+    - 150
+    - 200
+    - 250
+    - 300
+    - 405
   maxLevel: 10
   statIncrease:
   - type: 2

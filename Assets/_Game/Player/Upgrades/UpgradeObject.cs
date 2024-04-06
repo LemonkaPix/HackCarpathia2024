@@ -21,12 +21,20 @@ public class UpgradeStatIncrease
 }
 
 
+[System.Serializable]
+public class UpgCost
+{
+    public UpgradeType type;
+    public float[] cost;
+}
+
 [CreateAssetMenu]
 public class UpgradeObject : ScriptableObject
 {
     [Header("Main")]
     public string name;
     public UpgradeType type;
+    public UpgCost cost;
     public int maxLevel = 10;
 
     [Header("Stats")]
