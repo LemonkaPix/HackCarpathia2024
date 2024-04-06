@@ -45,3 +45,10 @@ MonoBehaviour:
     - 14
     - 17
     - 21
+  - type: 1
+    stats:
+    - 4
+    - 6
+    - 8
+    - 12
+    - 15

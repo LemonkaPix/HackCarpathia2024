@@ -40,3 +40,10 @@ MonoBehaviour:
     - 7
     - 10
     - 15
+  - type: 1
+    stats:
+    - 3
+    - 5
+    - 7
+    - 10
+    - 15
