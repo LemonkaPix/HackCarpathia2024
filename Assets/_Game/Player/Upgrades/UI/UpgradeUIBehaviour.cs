@@ -178,6 +178,10 @@ public class UpgradeUIBehaviour : MonoBehaviour
                 if (isGain) PlayerStats.Instance.OilGain = value;
                 else PlayerStats.Instance.OilLoss = value; 
                 break;
+            case UpgradeType.Pollution:
+                if(isGain) PlayerStats.Instance.PollutionGain = value;
+                else PlayerStats.Instance.PopulationLoss = value;
+                break;
         }
     }
 
