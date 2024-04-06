@@ -16,12 +16,25 @@ public class SaplingPlace : MonoBehaviour
 
     private void OnMouseDown()
     {
+        GrowTree();
+    }
+
+    public void GrowTree()
+    {
         if (!isTree)
         {
             spriteRenderer.enabled = false;
             isTree = true;
             Tree tree = Instantiate(treePrefab, this.gameObject.transform).GetComponent<Tree>();
             tree.saplingPlace = this;
+        }
+    }
+    public void ChopTree()
+    {
+        if (isTree)
+        {
+            spriteRenderer.enabled = true;
+            isTree = false;
         }
     }
 }
