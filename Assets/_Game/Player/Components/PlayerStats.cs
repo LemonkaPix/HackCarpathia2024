@@ -24,23 +24,28 @@ public class PlayerStats : MonoBehaviour
     [Header("Water")]
     public float Water;
     [ReadOnly] public float WaterGain = 1f;
+    [ReadOnly] public float WaterLoss = 1f;
 
     [Header("Wood")]
     public float Wood;
     [ReadOnly] public float WoodGain = 1f;
+    [ReadOnly] public float WoodLoss = 1f;
 
     [Header("Metal")]
 
     public float Metal;
     [ReadOnly] public float MetalGain = 1f ;
+    [ReadOnly] public float MetalLoss = 1f ;
 
     [Header("Energy")]
     public float Energy;
     [ReadOnly] public float EnergyGain = 1f;
+    [ReadOnly] public float EnergyLoss = 1f;
 
     [Header("Oil")]
     public float Oil;
     [ReadOnly] public float OilGain = 1f;
+    [ReadOnly] public float OilLoss = 1f;
 
     [Header("Special")]
     public float Population = 1000;
@@ -101,6 +106,18 @@ public class PlayerStats : MonoBehaviour
             totalMetal += MetalGain * PollutionLevels[currentPollutionLevel];
             totalEnergy += EnergyGain * PollutionLevels[currentPollutionLevel];
             totalOil += OilGain * PollutionLevels[currentPollutionLevel];
+
+            Water -= WaterLoss;
+            Wood -= WoodLoss;
+            Metal -= MetalLoss;
+            Energy -= EnergyLoss;
+            Oil -= OilLoss;
+
+            if (Water <= 0) Water = 0;
+            if (Wood <= 0) Wood = 0;
+            if (Metal <= 0) Metal = 0;
+            if (Energy <= 0) Energy = 0;
+            if (Oil <= 0) Oil = 0;
 
 
             Pollution += PollutionGain;
