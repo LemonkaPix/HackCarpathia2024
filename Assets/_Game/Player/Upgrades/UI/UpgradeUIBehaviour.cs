@@ -297,11 +297,30 @@ public class UpgradeUIBehaviour : MonoBehaviour
         }
 
         cost.text = $"{upgradeObject.cost.cost[level]} {buyText[GetIndex(upgradeObject.cost.type)]}";
-        lvlText.text = $"Lv. {level} + 1";
+        lvlText.text = $"Lv. {level + 1}";
     }
+
+    public void CloseWindow()
+    {
+        LeanTween.scale(gameObject, Vector3.zero, 0.2f);
+
+        Invoke(nameof(disableGameObject), 0.3f);
+    }
+
+    void disableGameObject()
+    {
+        gameObject.SetActive(false);
+    }
+
     private void OnEnable()
     {
+        if (gameObject.transform.localScale == Vector3.one) gameObject.transform.localScale = Vector3.zero;
+        LeanTween.scale(gameObject, Vector3.one, 0.2f);
         UpdateUI();
+    }
+    private void Start()
+    {
+        gameObject.SetActive(false);
     }
 
 }
