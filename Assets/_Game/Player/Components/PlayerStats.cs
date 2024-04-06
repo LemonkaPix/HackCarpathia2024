@@ -51,9 +51,11 @@ public class PlayerStats : MonoBehaviour
     [Header("Special")]
     public float Population = 1000;
     [ReadOnly] public float PopulationGain;
+    [ReadOnly] public float PopulationLoss;
     public float Generation;
     public float Pollution;
     [ReadOnly] public float PollutionGain;
+    [ReadOnly] public float PollutionLoss;
 
     public int currentPollutionLevel;
     [SerializeField] float[] PollutionLevels;
@@ -123,6 +125,9 @@ public class PlayerStats : MonoBehaviour
 
             Pollution += PollutionGain;
             Population += PopulationGain;
+
+            Pollution -= PollutionLoss;
+            Population -= PopulationLoss;
 
 
             if (Population <= 0)

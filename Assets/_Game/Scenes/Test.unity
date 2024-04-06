@@ -428,9 +428,11 @@ MonoBehaviour:
   OilLoss: 1
   Population: 1000
   PopulationGain: 0
+  PopulationLoss: 0
   Generation: 0
   Pollution: 0
   PollutionGain: 0
+  PollutionLoss: 0
   currentPollutionLevel: 0
   PollutionLevels:
   - 1
@@ -476,6 +478,17 @@ MonoBehaviour:
   powerPlant: 0
   waterPowerStation: 0
   OilRig: 0
+--- !u!114 &947643840 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6126546985072882159, guid: 3b8b2a8fd604c714591822376a95d1cd, type: 3}
+  m_PrefabInstance: {fileID: 7997482257683886719}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1263381409 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1990430531916136374, guid: caf55a372a0655a4daaef121a791263f, type: 3}
@@ -811,6 +824,42 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6534281619980556500, guid: 3b8b2a8fd604c714591822376a95d1cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534281619980556500, guid: 3b8b2a8fd604c714591822376a95d1cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534281619980556500, guid: 3b8b2a8fd604c714591822376a95d1cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7997482257683886721}
+    - target: {fileID: 6534281619980556500, guid: 3b8b2a8fd604c714591822376a95d1cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534281619980556500, guid: 3b8b2a8fd604c714591822376a95d1cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeBuilding
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534281619980556500, guid: 3b8b2a8fd604c714591822376a95d1cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpgradeUIBehaviour, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534281619980556500, guid: 3b8b2a8fd604c714591822376a95d1cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8847077402959520065, guid: 3b8b2a8fd604c714591822376a95d1cd, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 8847077402959520065, guid: 3b8b2a8fd604c714591822376a95d1cd, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -837,6 +886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeObject: {fileID: 11400000, guid: e8ecd7ac9d319a14fa89a0d1942ebc07, type: 2}
+  lvlText: {fileID: 947643840}
   cost: {fileID: 1659504972}
   texts:
   - {fileID: 585039358}
