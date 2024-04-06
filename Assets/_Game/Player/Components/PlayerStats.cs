@@ -9,6 +9,8 @@ public class PlayerStats : MonoBehaviour
 
     [Header("Game Settings")]
     public float GameTickTime = 1f;
+    public float GenerationTimer = 120f;
+    float genTime = 0f;
 
     [Header("Materials")]
 
@@ -34,7 +36,8 @@ public class PlayerStats : MonoBehaviour
     [ReadOnly] public float OilGain = 1f;
 
     [Header("Special")]
-    public float People;
+    public float Population;
+    [ReadOnly] public float PopulationGain;
     public float Generation;
     public float Pollution;
     [ReadOnly] public float PollutionGain;
@@ -54,6 +57,22 @@ public class PlayerStats : MonoBehaviour
         StartCoroutine(GameTick());
     }
 
+    public void GameOver()
+    {
+
+    }
+
+    public void NewGen()
+    {
+
+        int level = (int)PollutionForLevel.Last(x => x <= Pollution);
+        level = PollutionForLevel.IndexOf(level);
+
+        currentPollutionLevel = level;
+        Generation++;
+        genTime = 0f;
+    }
+
     IEnumerator GameTick()
     {
         while(true)
@@ -67,16 +86,27 @@ public class PlayerStats : MonoBehaviour
             Oil += OilGain * PollutionLevels[currentPollutionLevel];
 
             Pollution += PollutionGain;
+            Population += PopulationGain;
+
+
+            if (PopulationGain <= 0)
+            {
+                GameOver();
+                yield break;
+
+            }
+
             if(Pollution > 1000)
             {
                 Pollution = 1000;
             }
 
-            int level = (int)PollutionForLevel.Last(x => x <= Pollution);
-            level = PollutionForLevel.IndexOf(level);
+            if(genTime >= GenerationTimer)
+            {
+                NewGen();
+            }
 
-            currentPollutionLevel = level;
-
+            genTime += GameTickTime;
         }
     }
 }
