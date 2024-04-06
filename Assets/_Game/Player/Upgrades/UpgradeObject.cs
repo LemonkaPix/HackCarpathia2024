@@ -10,8 +10,23 @@ public enum UpgradeType
     Mine,
     PowerPlant,
     OilRig,
+    Pollution
 }
 
+[System.Serializable]
+public class UpgradeStatIncrease
+{
+    public UpgradeType type;
+    public float[] stats;
+}
+
+
+[System.Serializable]
+public class UpgCost
+{
+    public UpgradeType type;
+    public float[] cost;
+}
 
 [CreateAssetMenu]
 public class UpgradeObject : ScriptableObject
@@ -19,11 +34,11 @@ public class UpgradeObject : ScriptableObject
     [Header("Main")]
     public string name;
     public UpgradeType type;
+    public UpgCost cost;
     public int maxLevel = 10;
 
     [Header("Stats")]
-    public float[] cost;
-    public float[] statIncrease;
-    public float[] pollutionIncrease;
-    public float[] secondaryStatUsage;
+    public List<UpgradeStatIncrease> statIncrease;
+    public float[] pollutionLevels;
+    public List<UpgradeStatIncrease> statUsage;
 }

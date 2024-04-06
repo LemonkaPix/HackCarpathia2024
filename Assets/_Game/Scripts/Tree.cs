@@ -31,7 +31,7 @@ public class Tree : MonoBehaviour
     {
         if (state == statesToGrow)
         {
-            PlayerStats.Instance.Wood += woodAmount;
+            PlayerStats.Instance.totalWood += woodAmount;
             saplingPlace.ChopTree();
             Destroy(gameObject);
         }

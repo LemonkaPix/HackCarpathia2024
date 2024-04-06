@@ -3,6 +3,7 @@ using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -12,9 +13,11 @@ public class PlayerStats : MonoBehaviour
     public float GameTickTime = 1f;
     public float GenerationTimer = 120f;
     float genTime = 0f;
+    [SerializeField] private TMP_Text[] statsText;
     public float gameTime { get; private set; } = 0f;
+    
     public float totalWater { get; private set; } = 0f;
-    public float totalWood { get; private set; } = 0f;
+    public float totalWood { get; set; } = 0f;
     public float totalMetal { get; private set; } = 0f;
     public float totalEnergy { get; private set; } = 0f;
     public float totalOil { get; private set; } = 0f;
@@ -50,9 +53,11 @@ public class PlayerStats : MonoBehaviour
     [Header("Special")]
     public float Population = 1000;
     [ReadOnly] public float PopulationGain;
+    [ReadOnly] public float PopulationLoss;
     public float Generation;
     public float Pollution;
     [ReadOnly] public float PollutionGain;
+    [ReadOnly] public float PollutionLoss;
 
     public int currentPollutionLevel;
     [SerializeField] float[] PollutionLevels;
@@ -107,6 +112,12 @@ public class PlayerStats : MonoBehaviour
             totalEnergy += EnergyGain * PollutionLevels[currentPollutionLevel];
             totalOil += OilGain * PollutionLevels[currentPollutionLevel];
 
+            statsText[0].text = totalWater.ToString();
+            statsText[1].text = totalWood.ToString();
+            statsText[2].text = totalMetal.ToString();
+            statsText[3].text = totalEnergy.ToString();
+            statsText[4].text = totalOil.ToString();
+            
             Water -= WaterLoss;
             Wood -= WoodLoss;
             Metal -= MetalLoss;
@@ -122,6 +133,9 @@ public class PlayerStats : MonoBehaviour
 
             Pollution += PollutionGain;
             Population += PopulationGain;
+
+            Pollution -= PollutionLoss;
+            Population -= PopulationLoss;
 
 
             if (Population <= 0)
