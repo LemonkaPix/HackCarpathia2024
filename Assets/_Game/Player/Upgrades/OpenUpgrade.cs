@@ -5,6 +5,7 @@ using UnityEngine;
 public class OpenUpgrade : MonoBehaviour
 {
     [SerializeField] GameObject upgradeWindow;
+    [SerializeField] private string name;
     private void OnMouseDown()
     {
         upgradeWindow.SetActive(true);
