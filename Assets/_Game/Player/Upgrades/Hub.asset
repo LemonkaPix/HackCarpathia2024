@@ -31,12 +31,7 @@ MonoBehaviour:
     - 15
     - 25
     - 35
-  pollutionLevels:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  pollutionLevels: []
   statUsage:
   - type: 1
     stats:
