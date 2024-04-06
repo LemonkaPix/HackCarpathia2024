@@ -13,6 +13,7 @@ public class SettingsController : MonoBehaviour
 
     public void ChangeScene(string SceneName)
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneName);
     }
 }

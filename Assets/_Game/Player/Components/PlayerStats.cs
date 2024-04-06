@@ -13,6 +13,7 @@ public class PlayerStats : MonoBehaviour
     public float GenerationTimer = 120f;
     float genTime = 0f;
     public float gameTime { get; private set; } = 0f;
+    
     public float totalWater { get; private set; } = 0f;
     public float totalWood { get; private set; } = 0f;
     public float totalMetal { get; private set; } = 0f;
