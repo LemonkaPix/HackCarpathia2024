@@ -1,4 +1,4 @@
-using System;
+   using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,14 +11,13 @@ public class CameraMovement : MonoBehaviour
 
     private void Update()
     {
-        Vector2 velocity = new Vector2();
-        velocity.x = Input.GetAxis("Horizontal");
-        velocity.y = Input.GetAxis("Vertical");
-        if (velocity != Vector2.zero && 
-            Math.Abs(transform.position.x + (velocity * (Time.deltaTime * speed)).x) < borderPos.x && 
-            Math.Abs(transform.position.y + (velocity * (Time.deltaTime * speed)).y) < borderPos.y)
-        {
-            transform.position += (Vector3)(velocity * (Time.deltaTime * speed));
-        }
+        Vector2 velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+        Vector3 targetPosition = transform.position + (Vector3)(velocity * (speed * Time.deltaTime));
+
+        // Clamp targetPosition within borderPos
+        targetPosition.x = Mathf.Clamp(targetPosition.x, -borderPos.x, borderPos.x);
+        targetPosition.y = Mathf.Clamp(targetPosition.y, -borderPos.y, borderPos.y);
+
+        transform.position = targetPosition;
     }
 }
