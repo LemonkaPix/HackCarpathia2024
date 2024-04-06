@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1825931381, guid: 1201c14bb4ee74d8e99e56dc4f3f4fd1, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.19647932, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 0f010ad780ae7ed438c67eee4d174049, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,9 +100,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   saplingPlace: {fileID: 0}
   sprites:
-  - {fileID: -1825931381, guid: 1201c14bb4ee74d8e99e56dc4f3f4fd1, type: 3}
-  - {fileID: 831398740, guid: 1201c14bb4ee74d8e99e56dc4f3f4fd1, type: 3}
-  - {fileID: -851678419, guid: 1201c14bb4ee74d8e99e56dc4f3f4fd1, type: 3}
+  - {fileID: 21300000, guid: 0f010ad780ae7ed438c67eee4d174049, type: 3}
+  - {fileID: 21300000, guid: b329181c2af13c94498f12817d8f0a63, type: 3}
+  - {fileID: 21300000, guid: 7c4102bb328ab0f44a3ab5132aa543b1, type: 3}
+  state: 1
   statesToGrow: 3
   woodAmount: 5
 --- !u!61 &7512019698145447707
@@ -141,7 +142,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
