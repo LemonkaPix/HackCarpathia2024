@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ede0bf377821554c908362089d7d2ba, type: 3}
-  m_Name: Mine
+  m_Name: Oil Rig
   m_EditorClassIdentifier: 
-  name: Mine
-  type: 3
+  name: Oil Rig
+  type: 5
   cost:
-    type: 2
+    type: 3
     cost:
     - 25
     - 100
@@ -24,7 +24,7 @@ MonoBehaviour:
     - 250
   maxLevel: 5
   statIncrease:
-  - type: 3
+  - type: 5
     stats:
     - 1
     - 5
@@ -32,11 +32,11 @@ MonoBehaviour:
     - 15
     - 20
   pollutionLevels:
-  - 1
-  - 2
   - 3
-  - 4
   - 5
+  - 8
+  - 10
+  - 12
   statUsage:
   - type: 4
     stats:

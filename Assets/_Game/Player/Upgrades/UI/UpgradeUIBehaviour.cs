@@ -16,7 +16,8 @@ public class UpgradeUIBehaviour : MonoBehaviour
         "Current Wood/s: ",
         "Current Energy/s: ",
         "Current Metal/s: ",
-        "Current Oil/s: "
+        "Current Oil/s: ",
+        "Polution loss: "
     };
 
     string[] usageText = new string[]
@@ -26,7 +27,8 @@ public class UpgradeUIBehaviour : MonoBehaviour
         "Wood usage: ",
         "Energy usage: ",
         "Metal usage: ",
-        "Oil usage: "
+        "Oil usage: ",
+        "Polution loss: "
     };
 
     string[] buyText = new string[]
@@ -63,6 +65,9 @@ public class UpgradeUIBehaviour : MonoBehaviour
                 break;
             case UpgradeType.OilRig:
                 index = 5;
+                break;
+            case UpgradeType.Pollution:
+                index = 6;
                 break;
         }
         return index;
@@ -178,6 +183,10 @@ public class UpgradeUIBehaviour : MonoBehaviour
                 if (isGain) PlayerStats.Instance.OilGain = value;
                 else PlayerStats.Instance.OilLoss = value; 
                 break;
+            case UpgradeType.Pollution:
+                if(isGain) PlayerStats.Instance.PollutionGain = value;
+                else PlayerStats.Instance.PopulationLoss = value;
+                break;
         }
     }
 
@@ -292,7 +301,11 @@ public class UpgradeUIBehaviour : MonoBehaviour
 
             string msg = "";
             msg += usageText[GetIndex(stat.type)];
-            msg += $"{stat.stats[level]}<color=#FF0000> -> {stat.stats[level + 1]} </color>";
+            if(stat.type == UpgradeType.Pollution)
+            {
+                msg += $"{stat.stats[level]}<color=#AAFF00> -> {stat.stats[level + 1]} </color>";
+            }
+            else msg += $"{stat.stats[level]}<color=#FF0000> -> {stat.stats[level + 1]} </color>";
             texts[i + lastIndex].text = msg;
         }
 

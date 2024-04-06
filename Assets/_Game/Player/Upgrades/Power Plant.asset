@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ede0bf377821554c908362089d7d2ba, type: 3}
-  m_Name: Mine
+  m_Name: Power Plant
   m_EditorClassIdentifier: 
-  name: Mine
-  type: 3
+  name: Power Plant
+  type: 4
   cost:
     type: 2
     cost:
@@ -24,7 +24,7 @@ MonoBehaviour:
     - 250
   maxLevel: 5
   statIncrease:
-  - type: 3
+  - type: 4
     stats:
     - 1
     - 5
@@ -32,16 +32,16 @@ MonoBehaviour:
     - 15
     - 20
   pollutionLevels:
-  - 1
   - 2
   - 3
   - 4
   - 5
+  - 6
   statUsage:
-  - type: 4
+  - type: 5
     stats:
-    - 1
-    - 2
-    - 3
-    - 5
-    - 7
+    - 8
+    - 12
+    - 14
+    - 17
+    - 21
