@@ -16,10 +16,8 @@ public class GameOverBehaviour : MonoBehaviour
     void OnEnable()
     {
         genCounter.text = $"Generation Reached: {stats.Generation}";
-        Debug.Log(stats.gameTime);
         int minutes = (int)stats.gameTime / 60;
         int seconds = (int)stats.gameTime % 60;
-        Debug.Log($"A: {minutes}, B: {seconds}");
         timer.text = $"Time Played: {minutes}:{seconds}";
 
         materialHolder.Find("Water").GetComponent<TMP_Text>().text = $"Water: {stats.totalWater}";

@@ -126,7 +126,6 @@ public class PlayerStats : MonoBehaviour
 
             genTime += GameTickTime;
             gameTime += GameTickTime;
-            Debug.Log("Loop");
         }
     }
 }
