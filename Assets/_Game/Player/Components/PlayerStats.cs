@@ -11,6 +11,12 @@ public class PlayerStats : MonoBehaviour
     public float GameTickTime = 1f;
     public float GenerationTimer = 120f;
     float genTime = 0f;
+    public float gameTime { get; private set; } = 0f;
+    public float totalWater { get; private set; } = 0f;
+    public float totalWood { get; private set; } = 0f;
+    public float totalMetal { get; private set; } = 0f;
+    public float totalEnergy { get; private set; } = 0f;
+    public float totalOil { get; private set; } = 0f;
 
     [Header("Materials")]
 
@@ -36,7 +42,7 @@ public class PlayerStats : MonoBehaviour
     [ReadOnly] public float OilGain = 1f;
 
     [Header("Special")]
-    public float Population;
+    public float Population = 1000;
     [ReadOnly] public float PopulationGain;
     public float Generation;
     public float Pollution;
@@ -85,11 +91,18 @@ public class PlayerStats : MonoBehaviour
             Energy += EnergyGain * PollutionLevels[currentPollutionLevel];
             Oil += OilGain * PollutionLevels[currentPollutionLevel];
 
+            totalWater += WaterGain * PollutionLevels[currentPollutionLevel];
+            totalWood += WoodGain * PollutionLevels[currentPollutionLevel];
+            totalMetal += MetalGain * PollutionLevels[currentPollutionLevel];
+            totalEnergy += EnergyGain * PollutionLevels[currentPollutionLevel];
+            totalOil += OilGain * PollutionLevels[currentPollutionLevel];
+
+
             Pollution += PollutionGain;
             Population += PopulationGain;
 
 
-            if (PopulationGain <= 0)
+            if (Population <= 0)
             {
                 GameOver();
                 yield break;
@@ -107,6 +120,8 @@ public class PlayerStats : MonoBehaviour
             }
 
             genTime += GameTickTime;
+            gameTime += GameTickTime;
+            Debug.Log("Loop");
         }
     }
 }
