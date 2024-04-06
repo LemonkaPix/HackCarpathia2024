@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -21,6 +22,10 @@ public class PlayerStats : MonoBehaviour
     public float totalMetal { get; private set; } = 0f;
     public float totalEnergy { get; private set; } = 0f;
     public float totalOil { get; private set; } = 0f;
+
+    public float[] efficiences = new float[5];
+    
+
 
     [Header("Materials")]
 
@@ -63,6 +68,8 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] float[] PollutionLevels;
     [SerializeField] List<float> PollutionForLevel;
 
+    private int id = -1;
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -71,7 +78,11 @@ public class PlayerStats : MonoBehaviour
     private void Start()
     {
         StartCoroutine(GameTick());
-
+        efficiences[0] = 0.75f;
+        efficiences[1] = 0.75f;
+        efficiences[2] = 0.75f;
+        efficiences[3] = 0.75f;
+        efficiences[4] = 0.75f;
     }
     public void StartGameTick()
     {
@@ -94,17 +105,25 @@ public class PlayerStats : MonoBehaviour
         genTime = 0f;
     }
 
+    public void ChangeEfficiency(float value)
+    {
+        if (id != -1)
+        {
+              efficiences[id] = value;
+        }
+    }
+    
     IEnumerator GameTick()
     {
         while(true)
         {
             yield return new WaitForSeconds(GameTickTime);
 
-            Water += WaterGain * PollutionLevels[currentPollutionLevel];
-            Wood += WoodGain * PollutionLevels[currentPollutionLevel];
-            Metal += MetalGain * PollutionLevels[currentPollutionLevel];
-            Energy += EnergyGain * PollutionLevels[currentPollutionLevel];
-            Oil += OilGain * PollutionLevels[currentPollutionLevel];
+            Water += WaterGain * PollutionLevels[currentPollutionLevel] * efficiences[0];
+            Wood += WoodGain * PollutionLevels[currentPollutionLevel] * efficiences[1];
+            Metal += MetalGain * PollutionLevels[currentPollutionLevel] * efficiences[2];
+            Energy += EnergyGain * PollutionLevels[currentPollutionLevel] * efficiences[3];
+            Oil += OilGain * PollutionLevels[currentPollutionLevel] * efficiences[4];
 
             totalWater += WaterGain * PollutionLevels[currentPollutionLevel];
             totalWood += WoodGain * PollutionLevels[currentPollutionLevel];
@@ -137,6 +156,7 @@ public class PlayerStats : MonoBehaviour
             Pollution -= PollutionLoss;
             Population -= PopulationLoss;
 
+            Pollution *= (efficiences[0] * efficiences[1] * efficiences[2] * efficiences[3] * efficiences[4]) / 5;
 
             if (Population <= 0)
             {
