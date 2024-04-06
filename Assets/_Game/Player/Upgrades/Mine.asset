@@ -12,23 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ede0bf377821554c908362089d7d2ba, type: 3}
   m_Name: Mine
   m_EditorClassIdentifier: 
-  name: 
+  name: Mine
   type: 0
   maxLevel: 10
-  cost:
-  - 0
-  - 0
-  - 0
-  - 0
   statIncrease:
-  - 0
-  - 0
-  - 0
-  pollutionIncrease:
-  - 0
-  - 0
-  - 0
-  secondaryStatUsage:
-  - 0
-  - 0
-  - 0
+  - type: 2
+    stats:
+    - 1
+    - 5
+    - 10
+    - 15
+    - 20
+  pollutionLevels: []
+  statUsage:
+  - type: 0
+    stats:
+    - 1
+    - 5
+    - 10
+  - type: 1
+    stats:
+    - 1
+    - 5
+    - 10
