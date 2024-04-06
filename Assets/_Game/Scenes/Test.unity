@@ -356,14 +356,19 @@ MonoBehaviour:
   GenerationTimer: 120
   Water: 0
   WaterGain: 1
+  WaterLoss: 1
   Wood: 0
   WoodGain: 1
+  WoodLoss: 1
   Metal: 0
   MetalGain: 1
+  MetalLoss: 1
   Energy: 0
   EnergyGain: 1
+  EnergyLoss: 1
   Oil: 0
   OilGain: 1
+  OilLoss: 1
   Population: 1000
   PopulationGain: 0
   Generation: 0
@@ -656,6 +661,18 @@ PrefabInstance:
     - target: {fileID: 3351185181802347983, guid: 3b8b2a8fd604c714591822376a95d1cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639534252095018442, guid: 3b8b2a8fd604c714591822376a95d1cd, type: 3}
+      propertyPath: m_Value
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639534252095018442, guid: 3b8b2a8fd604c714591822376a95d1cd, type: 3}
+      propertyPath: m_MaxValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3639534252095018442, guid: 3b8b2a8fd604c714591822376a95d1cd, type: 3}
+      propertyPath: m_MinValue
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3652854788798288753, guid: 3b8b2a8fd604c714591822376a95d1cd, type: 3}
       propertyPath: m_Name
