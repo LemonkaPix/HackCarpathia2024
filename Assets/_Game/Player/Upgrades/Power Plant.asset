@@ -24,7 +24,7 @@ MonoBehaviour:
     - 250
   maxLevel: 5
   statIncrease:
-  - type: 3
+  - type: 4
     stats:
     - 1
     - 5
@@ -45,10 +45,3 @@ MonoBehaviour:
     - 14
     - 17
     - 21
-  - type: 1
-    stats:
-    - 4
-    - 6
-    - 8
-    - 12
-    - 15
