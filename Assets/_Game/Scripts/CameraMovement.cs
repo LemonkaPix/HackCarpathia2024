@@ -14,7 +14,9 @@ public class CameraMovement : MonoBehaviour
         Vector2 velocity = new Vector2();
         velocity.x = Input.GetAxis("Horizontal");
         velocity.y = Input.GetAxis("Vertical");
-        if (velocity != Vector2.zero)
+        if (velocity != Vector2.zero && 
+            Math.Abs(transform.position.x + (velocity * (Time.deltaTime * speed)).x) < borderPos.x && 
+            Math.Abs(transform.position.y + (velocity * (Time.deltaTime * speed)).y) < borderPos.y)
         {
             transform.position += (Vector3)(velocity * (Time.deltaTime * speed));
         }
