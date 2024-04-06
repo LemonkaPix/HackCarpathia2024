@@ -3,6 +3,7 @@ using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -12,6 +13,7 @@ public class PlayerStats : MonoBehaviour
     public float GameTickTime = 1f;
     public float GenerationTimer = 120f;
     float genTime = 0f;
+    [SerializeField] private TMP_Text[] statsText;
     public float gameTime { get; private set; } = 0f;
     
     public float totalWater { get; private set; } = 0f;
@@ -110,6 +112,12 @@ public class PlayerStats : MonoBehaviour
             totalEnergy += EnergyGain * PollutionLevels[currentPollutionLevel];
             totalOil += OilGain * PollutionLevels[currentPollutionLevel];
 
+            statsText[0].text = totalWater.ToString();
+            statsText[1].text = totalWood.ToString();
+            statsText[2].text = totalMetal.ToString();
+            statsText[3].text = totalEnergy.ToString();
+            statsText[4].text = totalOil.ToString();
+            
             Water -= WaterLoss;
             Wood -= WoodLoss;
             Metal -= MetalLoss;

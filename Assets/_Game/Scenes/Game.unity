@@ -639,6 +639,17 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &343649518 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5941846883896483163, guid: aace3208af4d644d79cb428eee604c78, type: 3}
+  m_PrefabInstance: {fileID: 1391351272}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &416374819
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,6 +783,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 416374819}
   m_CullTransparentMesh: 1
+--- !u!114 &418254750 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5941846883896483163, guid: aace3208af4d644d79cb428eee604c78, type: 3}
+  m_PrefabInstance: {fileID: 1195600946}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &458612616
 GameObject:
   m_ObjectHideFlags: 0
@@ -847,6 +869,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 458612616}
   m_CullTransparentMesh: 1
+--- !u!114 &484361818 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5941846883896483163, guid: aace3208af4d644d79cb428eee604c78, type: 3}
+  m_PrefabInstance: {fileID: 1048033385}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &493260515
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,6 +1027,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547743434}
   m_CullTransparentMesh: 1
+--- !u!114 &586248952 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5941846883896483163, guid: aace3208af4d644d79cb428eee604c78, type: 3}
+  m_PrefabInstance: {fileID: 1564770594}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &630317591
 GameObject:
   m_ObjectHideFlags: 0
@@ -2135,6 +2179,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5899802672943522837, guid: aace3208af4d644d79cb428eee604c78, type: 3}
   m_PrefabInstance: {fileID: 1048033385}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1077112290 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5941846883896483163, guid: aace3208af4d644d79cb428eee604c78, type: 3}
+  m_PrefabInstance: {fileID: 1929191440}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1179587967
 GameObject:
   m_ObjectHideFlags: 0
@@ -3942,8 +3997,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44540c80fdbbc465ba924fe908408b3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  borderPos: {x: 5, y: 5}
-  speed: 5
+  borderPos: {x: 7.5, y: 4}
+  speed: 7
 --- !u!1 &1794070829
 GameObject:
   m_ObjectHideFlags: 0
@@ -4362,6 +4417,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameTickTime: 1
   GenerationTimer: 120
+  statsText:
+  - {fileID: 484361818}
+  - {fileID: 418254750}
+  - {fileID: 343649518}
+  - {fileID: 1077112290}
+  - {fileID: 586248952}
   Water: 0
   WaterGain: 1
   WaterLoss: 1
@@ -4456,11 +4517,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 343049848463859145, guid: b44f9cab8213fe64993172aeb31c9504, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 343049848463859145, guid: b44f9cab8213fe64993172aeb31c9504, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 343049848463859145, guid: b44f9cab8213fe64993172aeb31c9504, type: 3}
       propertyPath: m_LocalPosition.z
