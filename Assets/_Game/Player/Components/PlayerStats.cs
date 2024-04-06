@@ -1,3 +1,4 @@
+using System;
 using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-
+    public static PlayerStats Instance { get; private set; }
     [Header("Game Settings")]
     public float GameTickTime = 1f;
     public float GenerationTimer = 120f;
@@ -52,6 +53,10 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] float[] PollutionLevels;
     [SerializeField] List<float> PollutionForLevel;
 
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+    }
 
     private void Start()
     {
