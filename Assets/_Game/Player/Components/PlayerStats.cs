@@ -3,6 +3,7 @@ using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Managers.Sounds;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
@@ -10,13 +11,13 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public static PlayerStats Instance { get; private set; }
-    [Header("Game Settings")]
-    public float GameTickTime = 1f;
+    [Header("Game Settings")] public float GameTickTime = 1f;
     public float GenerationTimer = 120f;
     float genTime = 0f;
+    public bool upgradeOpen = false;
     [SerializeField] private TMP_Text[] statsText;
     public float gameTime { get; private set; } = 0f;
-    
+
     public float totalWater { get; private set; } = 0f;
     public float totalWood { get; set; } = 0f;
     public float totalMetal { get; private set; } = 0f;
@@ -24,39 +25,31 @@ public class PlayerStats : MonoBehaviour
     public float totalOil { get; private set; } = 0f;
 
     public float[] efficiences = new float[5];
-    
 
 
-    [Header("Materials")]
-
-    [Header("Water")]
+    [Header("Materials")] [Header("Water")]
     public float Water;
+
     [ReadOnly] public float WaterGain = 1f;
     [ReadOnly] public float WaterLoss = 0f;
 
-    [Header("Wood")]
-    public float Wood;
+    [Header("Wood")] public float Wood;
     [ReadOnly] public float WoodGain = 1f;
     [ReadOnly] public float WoodLoss = 0f;
 
-    [Header("Metal")]
+    [Header("Metal")] public float Metal;
+    [ReadOnly] public float MetalGain = 1f;
+    [ReadOnly] public float MetalLoss = 0f;
 
-    public float Metal;
-    [ReadOnly] public float MetalGain = 1f ;
-    [ReadOnly] public float MetalLoss = 0f ;
-
-    [Header("Energy")]
-    public float Energy;
+    [Header("Energy")] public float Energy;
     [ReadOnly] public float EnergyGain = 1f;
     [ReadOnly] public float EnergyLoss = 0f;
 
-    [Header("Oil")]
-    public float Oil;
+    [Header("Oil")] public float Oil;
     [ReadOnly] public float OilGain = 1f;
     [ReadOnly] public float OilLoss = 0f;
 
-    [Header("Special")]
-    public float Population = 1000;
+    [Header("Special")] public float Population = 1000;
     [ReadOnly] public float PopulationGain;
     [ReadOnly] public float PopulationLoss;
     public float Generation;
@@ -68,6 +61,9 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] float[] PollutionLevels;
     [SerializeField] List<float> PollutionForLevel;
 
+    [SerializeField] private TMP_Text generationNumText;
+    private bool isFirstPlay = true;
+
     private int id = -1;
 
     private void Awake()
@@ -77,45 +73,67 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
+        if(isFirstPlay){
+            SoundManager.Instance.PlayClip(SoundManager.Instance.MusicSource,
+            SoundManager.Instance.MusicCollection.clips[3], true, 0);
+            isFirstPlay = false;
+        }
+
         StartCoroutine(GameTick());
         efficiences[0] = 1f;
         efficiences[1] = 1f;
         efficiences[2] = 0.75f;
         efficiences[3] = 0.75f;
         efficiences[4] = 0.75f;
+        generationNumText.text = Generation.ToString();
     }
+
+    private void Update()
+    {
+        generationNumText.text = Generation.ToString();
+    }
+
     public void StartGameTick()
     {
         StartCoroutine(GameTick());
     }
-
+[Button]
     public void GameOver()
     {
-
+        SoundManager.Instance.PlayClip(SoundManager.Instance.MusicSource,
+            SoundManager.Instance.MusicCollection.clips[0], false, 0);
     }
 
     public void NewGen()
     {
-
         int level = (int)PollutionForLevel.Last(x => x <= Pollution);
         level = PollutionForLevel.IndexOf(level);
 
         currentPollutionLevel = level;
         Generation++;
+        generationNumText.text = Generation.ToString();
+        PlayerStats.Instance.Start();
         genTime = 0f;
+        if (Generation == 5)
+            SoundManager.Instance.PlayClip(SoundManager.Instance.MusicSource,
+                SoundManager.Instance.MusicCollection.clips[2], true, 0);
+
+        Timer.Instance.generationTime = 10;
+        Timer.Instance.timeText.text = Timer.Instance.generationTime.ToString();
+        StartCoroutine(Timer.Instance.TimeCorotuine());
     }
 
     public void ChangeEfficiency(float value)
     {
         if (id != -1)
         {
-              efficiences[id] = value;
+            efficiences[id] = value;
         }
     }
-    
+
     IEnumerator GameTick()
     {
-        while(true)
+        while (true)
         {
             yield return new WaitForSeconds(GameTickTime);
 
@@ -137,7 +155,7 @@ public class PlayerStats : MonoBehaviour
             statsText[3].text = Mathf.Floor(Energy).ToString();
             statsText[4].text = Mathf.Floor(Oil).ToString();
             statsText[5].text = Mathf.Floor(Population).ToString();
-            
+
             Water -= WaterLoss;
             Wood -= WoodLoss;
             Metal -= MetalLoss;
@@ -163,15 +181,14 @@ public class PlayerStats : MonoBehaviour
             {
                 GameOver();
                 yield break;
-
             }
 
-            if(Pollution > 1000)
+            if (Pollution > 1000)
             {
                 Pollution = 1000;
             }
 
-            if(genTime >= GenerationTimer)
+            if (genTime >= GenerationTimer)
             {
                 NewGen();
             }

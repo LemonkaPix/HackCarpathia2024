@@ -6,20 +6,23 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     [SerializeField] private Vector2 borderPos;
-    public float speed = 1f;
+    [SerializeField] private PlayerStats playerStats;
+    [SerializeField] private float speed = 1f;
     
 
     private void Update()
     {
+        if (!playerStats.upgradeOpen)
+        {
 
+            Vector2 velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+            Vector3 targetPosition = transform.position + (Vector3)(velocity * (speed * Time.deltaTime));
 
-        Vector2 velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
-        Vector3 targetPosition = transform.position + (Vector3)(velocity * (speed * Time.deltaTime));
+            // Clamp targetPosition within borderPos
+            targetPosition.x = Mathf.Clamp(targetPosition.x, -borderPos.x, borderPos.x);
+            targetPosition.y = Mathf.Clamp(targetPosition.y, -borderPos.y, borderPos.y);
 
-        // Clamp targetPosition within borderPos
-        targetPosition.x = Mathf.Clamp(targetPosition.x, -borderPos.x, borderPos.x);
-        targetPosition.y = Mathf.Clamp(targetPosition.y, -borderPos.y, borderPos.y);
-
-        transform.position = targetPosition;
+            transform.position = targetPosition;
+        }
     }
 }
