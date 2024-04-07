@@ -721,7 +721,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2555966233681292896}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3184967248942995942}
+        m_TargetAssemblyTypeName: UpgradeUIBehaviour, Assembly-CSharp
+        m_MethodName: CloseWindow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6358487328140474640
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,8 +1634,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeObject: {fileID: 11400000, guid: 773a22ccc6414444f98340c44f72bc01, type: 2}
+  upgradeError: {fileID: 0}
   lvlText: {fileID: 5091359396875381246}
   cost: {fileID: 6132398681937505365}
   texts:
   - {fileID: 556816991379079391}
   - {fileID: 4184532426653565603}
+  playerStats: {fileID: 0}

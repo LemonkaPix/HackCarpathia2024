@@ -1718,10 +1718,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlantUpgrade
       objectReference: {fileID: 0}
-    - target: {fileID: 867697443842390813, guid: 2925fc6ecbea7444daf7fc6ebac3bf1d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1804356133901273043, guid: 2925fc6ecbea7444daf7fc6ebac3bf1d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1802,6 +1798,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7053991674808810779, guid: 2925fc6ecbea7444daf7fc6ebac3bf1d, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 1990297681}
     - target: {fileID: 7053991674808810779, guid: 2925fc6ecbea7444daf7fc6ebac3bf1d, type: 3}
       propertyPath: upgradeError
       value: 
@@ -2273,16 +2273,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 1586096538}
     m_Modifications:
     - target: {fileID: 697835238287806896, guid: 4bf07de06b4d3ee4db5fb0fe59694d34, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 1990297681}
+    - target: {fileID: 697835238287806896, guid: 4bf07de06b4d3ee4db5fb0fe59694d34, type: 3}
       propertyPath: upgradeError
       value: 
       objectReference: {fileID: 1602890440}
     - target: {fileID: 4832916919750383814, guid: 4bf07de06b4d3ee4db5fb0fe59694d34, type: 3}
       propertyPath: m_Name
       value: LumberUpgrade
-      objectReference: {fileID: 0}
-    - target: {fileID: 4832916919750383814, guid: 4bf07de06b4d3ee4db5fb0fe59694d34, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6179293152912099609, guid: 4bf07de06b4d3ee4db5fb0fe59694d34, type: 3}
       propertyPath: m_Pivot.x
@@ -4572,10 +4572,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HubUpgrade
       objectReference: {fileID: 0}
-    - target: {fileID: 2268732227982745782, guid: 7c0a6da5116f39c4ab1eb18e4de49bbc, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 3446969990776578618, guid: 7c0a6da5116f39c4ab1eb18e4de49bbc, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 1990297681}
     - target: {fileID: 3446969990776578618, guid: 7c0a6da5116f39c4ab1eb18e4de49bbc, type: 3}
       propertyPath: upgradeError
       value: 
@@ -5691,16 +5691,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 1586096538}
     m_Modifications:
     - target: {fileID: 3899157171276756009, guid: 0c9b565feec8df645a9f9c214a65090b, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 1990297681}
+    - target: {fileID: 3899157171276756009, guid: 0c9b565feec8df645a9f9c214a65090b, type: 3}
       propertyPath: upgradeError
       value: 
       objectReference: {fileID: 1602890440}
     - target: {fileID: 7089886212065054864, guid: 0c9b565feec8df645a9f9c214a65090b, type: 3}
       propertyPath: m_Name
       value: OilRigUpgrade
-      objectReference: {fileID: 0}
-    - target: {fileID: 7089886212065054864, guid: 0c9b565feec8df645a9f9c214a65090b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8721521703819887856, guid: 0c9b565feec8df645a9f9c214a65090b, type: 3}
       propertyPath: m_Pivot.x
@@ -6981,10 +6981,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -8011,7 +8011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderPos: {x: 7.5, y: 4}
-  playerStats: {fileID: 0}
+  playerStats: {fileID: 1990297681}
   speed: 7
 --- !u!1001 &1787487502
 PrefabInstance:
@@ -8282,28 +8282,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 1586096538}
     m_Modifications:
     - target: {fileID: 1194672228899095355, guid: 586db328822bdda42bdd7c4900657871, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 1990297681}
+    - target: {fileID: 1194672228899095355, guid: 586db328822bdda42bdd7c4900657871, type: 3}
       propertyPath: upgradeError
       value: 
       objectReference: {fileID: 1602890440}
     - target: {fileID: 2149273066219273803, guid: 586db328822bdda42bdd7c4900657871, type: 3}
       propertyPath: m_Name
       value: MineUpgrade
-      objectReference: {fileID: 0}
-    - target: {fileID: 2149273066219273803, guid: 586db328822bdda42bdd7c4900657871, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2152381125036557834, guid: 586db328822bdda42bdd7c4900657871, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2152381125036557834, guid: 586db328822bdda42bdd7c4900657871, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2152381125036557834, guid: 586db328822bdda42bdd7c4900657871, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3828718156729307644, guid: 586db328822bdda42bdd7c4900657871, type: 3}
       propertyPath: m_Pivot.x
@@ -8383,14 +8371,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3828718156729307644, guid: 586db328822bdda42bdd7c4900657871, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6654153618517272599, guid: 586db328822bdda42bdd7c4900657871, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6654153618517272599, guid: 586db328822bdda42bdd7c4900657871, type: 3}
-      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -9348,7 +9328,7 @@ MonoBehaviour:
   - 800
   - 900
   - 100
-  generationNumText: {fileID: 0}
+  generationNumText: {fileID: 967498595}
 --- !u!4 &1990297682
 Transform:
   m_ObjectHideFlags: 0
@@ -35651,37 +35631,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 1586096538}
     m_Modifications:
     - target: {fileID: 3184967248942995942, guid: 5e0a2f9765750894a94d38509c877e6e, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 1990297681}
+    - target: {fileID: 3184967248942995942, guid: 5e0a2f9765750894a94d38509c877e6e, type: 3}
       propertyPath: upgradeError
       value: 
       objectReference: {fileID: 1602890440}
-    - target: {fileID: 3957416265433034495, guid: 5e0a2f9765750894a94d38509c877e6e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3957416265433034495, guid: 5e0a2f9765750894a94d38509c877e6e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3957416265433034495, guid: 5e0a2f9765750894a94d38509c877e6e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 9165938702360897989}
-    - target: {fileID: 3957416265433034495, guid: 5e0a2f9765750894a94d38509c877e6e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3957416265433034495, guid: 5e0a2f9765750894a94d38509c877e6e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CloseWindow
-      objectReference: {fileID: 0}
-    - target: {fileID: 3957416265433034495, guid: 5e0a2f9765750894a94d38509c877e6e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UpgradeUIBehaviour, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3957416265433034495, guid: 5e0a2f9765750894a94d38509c877e6e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 6174881131589886408, guid: 5e0a2f9765750894a94d38509c877e6e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -35766,10 +35722,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterPlantUpgrade
       objectReference: {fileID: 0}
-    - target: {fileID: 8991274979869330975, guid: 5e0a2f9765750894a94d38509c877e6e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -35783,6 +35735,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1586096538}
     m_Modifications:
+    - target: {fileID: 449394622598520996, guid: 88d3c9b132917a14b8ab28e5bbbbb166, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 1990297681}
     - target: {fileID: 449394622598520996, guid: 88d3c9b132917a14b8ab28e5bbbbb166, type: 3}
       propertyPath: upgradeError
       value: 
@@ -35871,10 +35827,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PumpUpgrade
       objectReference: {fileID: 0}
-    - target: {fileID: 5248134900700646834, guid: 88d3c9b132917a14b8ab28e5bbbbb166, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -35916,17 +35868,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6174881131589886408, guid: 5e0a2f9765750894a94d38509c877e6e, type: 3}
   m_PrefabInstance: {fileID: 4487803929504908719}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9165938702360897989 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3184967248942995942, guid: 5e0a2f9765750894a94d38509c877e6e, type: 3}
-  m_PrefabInstance: {fileID: 4487803929504908719}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8153195401096109747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26ff4503680abd140ab5cab20f15416b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
