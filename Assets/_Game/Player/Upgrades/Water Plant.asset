@@ -35,7 +35,7 @@ MonoBehaviour:
   statUsage:
   - type: 1
     stats:
-    - 8
+    - 0
     - 12
     - 14
     - 17

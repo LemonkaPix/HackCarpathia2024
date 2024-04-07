@@ -51,8 +51,6 @@ public class TextShake : MonoBehaviour
         shakeText = RemoveMarkers(shakeText);
         
 
-        Debug.Log(shakeText);
-
         int endShakeIndex = startShakeIndex + shakeText.Length > textInfo.characterCount ? textInfo.characterCount : startShakeIndex + shakeText.Length;
 
         

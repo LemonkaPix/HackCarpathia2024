@@ -19,8 +19,6 @@ public class TextShakeMarkFinder : MonoBehaviour
 
         slicedText = slicedText.Remove(markEndIndex);
 
-        Debug.Log(slicedText);
-
         return slicedText;
     }
 

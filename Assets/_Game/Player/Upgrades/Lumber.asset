@@ -26,7 +26,7 @@ MonoBehaviour:
   statIncrease:
   - type: 2
     stats:
-    - 5
+    - 1
     - 15
     - 20
     - 25
@@ -42,7 +42,7 @@ MonoBehaviour:
     - 15
   - type: 1
     stats:
-    - 3
+    - 0
     - 5
     - 7
     - 10
