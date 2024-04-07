@@ -18,18 +18,10 @@ public class SaplingPlace : MonoBehaviour
 
     private void OnMouseDown()
     {
-        startTime = Time.time;
-    }
+        GrowTree();
 
-    private void OnMouseDrag()
-    {
-        if (startTime + holdTime <= Time.time)
-        {
-            print("Działa");
-            GrowTree();
-        }
-        print(startTime + " " + holdTime);
     }
+    
 
     public void GrowTree()
     {
