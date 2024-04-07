@@ -9078,6 +9078,7 @@ MonoBehaviour:
   - 800
   - 900
   - 100
+  generationNumText: {fileID: 967498595}
 --- !u!4 &1990297682
 Transform:
   m_ObjectHideFlags: 0
