@@ -211,14 +211,13 @@ public class UpgradeUIBehaviour : MonoBehaviour
     }
 
     [Button]
-    public IEnumerator ShowUpgradeError()
+    public void ShowUpgradeError()
     {
         upgradeError.SetActive(true);
-        //LeanTween.scale(upgradeError, Vector3.one, .3f);
-        LeanTween.rotate(upgradeError, new Vector3(0f,0f,10f), .4f);
-        yield return new WaitForSeconds(.4f);
-        //LeanTween.rotateX(upgradeError, -10f, .4f);
     }
+
+  
+
 
     public void UpgradeBuilding()
     {
