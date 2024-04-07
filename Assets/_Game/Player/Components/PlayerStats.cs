@@ -145,10 +145,10 @@ public class PlayerStats : MonoBehaviour
             yield return new WaitForSeconds(GameTickTime);
             double p = Population * 0.01;
             PopulationLoss = (float)p;
-            Water += WaterGain * PollutionLevels[currentPollutionLevel] * efficiences[0];
-            Metal += MetalGain * PollutionLevels[currentPollutionLevel] * efficiences[2];
-            Energy += EnergyGain * PollutionLevels[currentPollutionLevel] * efficiences[3];
-            Oil += OilGain * PollutionLevels[currentPollutionLevel] * efficiences[4];
+            Water += WaterGain * PollutionLevels[currentPollutionLevel];
+            Metal += MetalGain * PollutionLevels[currentPollutionLevel];
+            Energy += EnergyGain * PollutionLevels[currentPollutionLevel];
+            Oil += OilGain * PollutionLevels[currentPollutionLevel];
 
             totalWater += WaterGain * PollutionLevels[currentPollutionLevel];
             totalMetal += MetalGain * PollutionLevels[currentPollutionLevel];
