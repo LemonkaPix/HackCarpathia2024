@@ -8,6 +8,8 @@ public class SaplingPlace : MonoBehaviour
     public bool isTree = false;
     private SpriteRenderer spriteRenderer;
     [SerializeField] private GameObject treePrefab;
+    private float startTime = 0;
+    [SerializeField] float holdTime = 1f;
 
     private void Start()
     {
@@ -16,7 +18,17 @@ public class SaplingPlace : MonoBehaviour
 
     private void OnMouseDown()
     {
-        GrowTree();
+        startTime = Time.time;
+    }
+
+    private void OnMouseDrag()
+    {
+        if (startTime + holdTime <= Time.time)
+        {
+            print("Działa");
+            GrowTree();
+        }
+        print(startTime + " " + holdTime);
     }
 
     public void GrowTree()
