@@ -32,28 +32,28 @@ public class PlayerStats : MonoBehaviour
     [Header("Water")]
     public float Water;
     [ReadOnly] public float WaterGain = 1f;
-    [ReadOnly] public float WaterLoss = 1f;
+    [ReadOnly] public float WaterLoss = 0f;
 
     [Header("Wood")]
     public float Wood;
     [ReadOnly] public float WoodGain = 1f;
-    [ReadOnly] public float WoodLoss = 1f;
+    [ReadOnly] public float WoodLoss = 0f;
 
     [Header("Metal")]
 
     public float Metal;
     [ReadOnly] public float MetalGain = 1f ;
-    [ReadOnly] public float MetalLoss = 1f ;
+    [ReadOnly] public float MetalLoss = 0f ;
 
     [Header("Energy")]
     public float Energy;
     [ReadOnly] public float EnergyGain = 1f;
-    [ReadOnly] public float EnergyLoss = 1f;
+    [ReadOnly] public float EnergyLoss = 0f;
 
     [Header("Oil")]
     public float Oil;
     [ReadOnly] public float OilGain = 1f;
-    [ReadOnly] public float OilLoss = 1f;
+    [ReadOnly] public float OilLoss = 0f;
 
     [Header("Special")]
     public float Population = 1000;
@@ -78,8 +78,8 @@ public class PlayerStats : MonoBehaviour
     private void Start()
     {
         StartCoroutine(GameTick());
-        efficiences[0] = 0.75f;
-        efficiences[1] = 0.75f;
+        efficiences[0] = 1f;
+        efficiences[1] = 1f;
         efficiences[2] = 0.75f;
         efficiences[3] = 0.75f;
         efficiences[4] = 0.75f;
@@ -131,11 +131,12 @@ public class PlayerStats : MonoBehaviour
             totalEnergy += EnergyGain * PollutionLevels[currentPollutionLevel];
             totalOil += OilGain * PollutionLevels[currentPollutionLevel];
 
-            statsText[0].text = totalWater.ToString();
-            statsText[1].text = totalWood.ToString();
-            statsText[2].text = totalMetal.ToString();
-            statsText[3].text = totalEnergy.ToString();
-            statsText[4].text = totalOil.ToString();
+            statsText[0].text = Mathf.Floor(Water).ToString();
+            statsText[1].text = Mathf.Floor(Wood).ToString();
+            statsText[2].text = Mathf.Floor(Metal).ToString();
+            statsText[3].text = Mathf.Floor(Energy).ToString();
+            statsText[4].text = Mathf.Floor(Oil).ToString();
+            statsText[5].text = Mathf.Floor(Population).ToString();
             
             Water -= WaterLoss;
             Wood -= WoodLoss;

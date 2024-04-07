@@ -9,5 +9,5 @@ public class OpenUpgrade : MonoBehaviour
     private void OnMouseDown()
     {
         upgradeWindow.SetActive(true);
-    }
+    }   
 }

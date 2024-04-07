@@ -354,7 +354,7 @@ public class UpgradeUIBehaviour : MonoBehaviour
     }
     private void Start()
     {
-        //gameObject.SetActive(false);
+        UpdateBuildingStats(GetBuildingLevel(upgradeObject.type));
     }
 
 }
