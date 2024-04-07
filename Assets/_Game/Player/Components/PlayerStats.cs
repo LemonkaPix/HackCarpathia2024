@@ -66,6 +66,7 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] private TMP_Text generationNumText;
     [SerializeField] private Slider pollutionNumText;
+    [SerializeField] UpgradeObject upgradeObject;
     private bool isFirstPlay = true;
 
     public UnityEvent OnNewGen;
@@ -174,6 +175,14 @@ public class PlayerStats : MonoBehaviour
             if (Energy <= 0) Energy = 0;
             if (Oil <= 0) Oil = 0;
 
+            if(Water <= 0 || Wood <= 0 || Metal <= 0 || Energy <= 0 || Oil <= 0)
+            {
+                PopulationGain = 0;
+            }
+            else
+            {
+                PopulationGain = upgradeObject.statIncrease[0].stats[PlayerUpgrades.instance.hubLevel];
+            }    
 
             Pollution += PollutionGain;
             Population += PopulationGain;
