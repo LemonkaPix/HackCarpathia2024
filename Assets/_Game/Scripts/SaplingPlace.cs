@@ -18,7 +18,11 @@ public class SaplingPlace : MonoBehaviour
 
     private void OnMouseDown()
     {
-        GrowTree();
+         if (PlayerStats.Instance.Water > 5)
+            {
+                PlayerStats.Instance.Water -= 5;
+                GrowTree();
+            }
 
     }
     
@@ -27,7 +31,7 @@ public class SaplingPlace : MonoBehaviour
     {
         if (!isTree)
         {
-            spriteRenderer.enabled = false;
+ 
             isTree = true;
             Tree tree = Instantiate(treePrefab, this.gameObject.transform).GetComponent<Tree>();
             tree.saplingPlace = this;

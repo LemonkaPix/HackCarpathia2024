@@ -11,10 +11,11 @@ public class Tree : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     [SerializeField] int state = 1;
     [SerializeField] int statesToGrow = 3;
-    [SerializeField] private int woodAmount;
+    private int woodAmount;
 
     private void Start()
     {
+        PlayerStats.Instance.PollutionLoss += state;
         spriteRenderer = GetComponent<SpriteRenderer>();
         PlayerStats.Instance.OnNewGen.AddListener(ChangeState);
     }
@@ -23,6 +24,7 @@ public class Tree : MonoBehaviour
     {
         if (state < statesToGrow)
         {
+            PlayerStats.Instance.PollutionLoss += state;
             state++;
             spriteRenderer.sprite = sprites[state - 1];
         }
@@ -32,8 +34,11 @@ public class Tree : MonoBehaviour
     {
         if (state == statesToGrow)
         {
-            PlayerStats.Instance.Wood += woodAmount;
-            saplingPlace.ChopTree();
+            PlayerStats.Instance.Wood += (int)PlayerStats.Instance.WoodGain; ;
+            print(woodAmount);
+            PlayerStats.Instance.PollutionLoss -= 6;
+            if (saplingPlace != null)
+                saplingPlace.ChopTree();
             Destroy(gameObject);
         }
     }
