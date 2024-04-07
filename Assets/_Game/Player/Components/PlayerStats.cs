@@ -7,6 +7,8 @@ using Managers.Sounds;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -63,7 +65,10 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] GameObject gameOverObject;
 
     [SerializeField] private TMP_Text generationNumText;
+    [SerializeField] private Slider pollutionNumText;
     private bool isFirstPlay = true;
+
+    public UnityEvent OnNewGen;
 
     private int id = -1;
 
@@ -88,6 +93,7 @@ public class PlayerStats : MonoBehaviour
     private void Update()
     {
         generationNumText.text = Generation.ToString();
+        pollutionNumText.value = Pollution/1000;
     }
 
     public void StartGameTick()
@@ -118,7 +124,9 @@ public class PlayerStats : MonoBehaviour
 
         Timer.Instance.generationTime = 10;
         Timer.Instance.timeText.text = Timer.Instance.generationTime.ToString();
+        OnNewGen.Invoke();
         StartCoroutine(Timer.Instance.TimeCorotuine());
+        
     }
 
     public void ChangeEfficiency(float value)

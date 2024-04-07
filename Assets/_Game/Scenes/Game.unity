@@ -2565,7 +2565,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 00000
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1344f181256fe3341a4f342530579071, type: 2}
   m_sharedMaterial: {fileID: -1417565176417169757, guid: 1344f181256fe3341a4f342530579071, type: 2}
@@ -3749,7 +3749,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 00
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1344f181256fe3341a4f342530579071, type: 2}
   m_sharedMaterial: {fileID: -1417565176417169757, guid: 1344f181256fe3341a4f342530579071, type: 2}
@@ -3964,7 +3964,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 000
+  m_text: 120
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1344f181256fe3341a4f342530579071, type: 2}
   m_sharedMaterial: {fileID: -1417565176417169757, guid: 1344f181256fe3341a4f342530579071, type: 2}
@@ -4278,11 +4278,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5941846883896483163, guid: aace3208af4d644d79cb428eee604c78, type: 3}
       propertyPath: m_text
-      value: "00000\x03"
+      value: "0\x03"
       objectReference: {fileID: 0}
     - target: {fileID: 5941846883896483163, guid: aace3208af4d644d79cb428eee604c78, type: 3}
       propertyPath: m_fontSize
-      value: 57.2
+      value: 58.45
       objectReference: {fileID: 0}
     - target: {fileID: 9208333616726548008, guid: aace3208af4d644d79cb428eee604c78, type: 3}
       propertyPath: m_SizeDelta.x
@@ -4968,11 +4968,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5941846883896483163, guid: aace3208af4d644d79cb428eee604c78, type: 3}
       propertyPath: m_text
-      value: "00000\x03"
+      value: "0\x03"
       objectReference: {fileID: 0}
     - target: {fileID: 5941846883896483163, guid: aace3208af4d644d79cb428eee604c78, type: 3}
       propertyPath: m_fontSize
-      value: 57.2
+      value: 58.45
       objectReference: {fileID: 0}
     - target: {fileID: 9208333616726548008, guid: aace3208af4d644d79cb428eee604c78, type: 3}
       propertyPath: m_SizeDelta.x
@@ -5721,11 +5721,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5941846883896483163, guid: aace3208af4d644d79cb428eee604c78, type: 3}
       propertyPath: m_text
-      value: "00000\x03"
+      value: "0\x03"
       objectReference: {fileID: 0}
     - target: {fileID: 5941846883896483163, guid: aace3208af4d644d79cb428eee604c78, type: 3}
       propertyPath: m_fontSize
-      value: 57.2
+      value: 58.45
       objectReference: {fileID: 0}
     - target: {fileID: 9208333616726548008, guid: aace3208af4d644d79cb428eee604c78, type: 3}
       propertyPath: m_SizeDelta.y
@@ -6791,11 +6791,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5941846883896483163, guid: aace3208af4d644d79cb428eee604c78, type: 3}
       propertyPath: m_text
-      value: "00000\x03"
+      value: "0\x03"
       objectReference: {fileID: 0}
     - target: {fileID: 5941846883896483163, guid: aace3208af4d644d79cb428eee604c78, type: 3}
       propertyPath: m_fontSize
-      value: 57.2
+      value: 58.45
       objectReference: {fileID: 0}
     - target: {fileID: 9208333616726548008, guid: aace3208af4d644d79cb428eee604c78, type: 3}
       propertyPath: m_SizeDelta.x
@@ -8932,11 +8932,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5941846883896483163, guid: aace3208af4d644d79cb428eee604c78, type: 3}
       propertyPath: m_text
-      value: "00000\x03"
+      value: "0\x03"
       objectReference: {fileID: 0}
     - target: {fileID: 5941846883896483163, guid: aace3208af4d644d79cb428eee604c78, type: 3}
       propertyPath: m_fontSize
-      value: 57.2
+      value: 58.45
       objectReference: {fileID: 0}
     - target: {fileID: 9208333616726548008, guid: aace3208af4d644d79cb428eee604c78, type: 3}
       propertyPath: m_SizeDelta.x
@@ -9593,6 +9593,10 @@ MonoBehaviour:
   - 100
   gameOverObject: {fileID: 1764147797}
   generationNumText: {fileID: 967498595}
+  pollutionNumText: {fileID: 0}
+  OnNewGen:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1990297682
 Transform:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ public class Tree : MonoBehaviour
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        PlayerStats.Instance.OnNewGen.AddListener(ChangeState);
     }
     [Button]
     public void ChangeState()
