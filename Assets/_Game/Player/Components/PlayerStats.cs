@@ -128,15 +128,14 @@ public class PlayerStats : MonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(GameTickTime);
-
+            double p = Population * 0.001;
+            PopulationLoss = (float)p;
             Water += WaterGain * PollutionLevels[currentPollutionLevel] * efficiences[0];
-            Wood += WoodGain * PollutionLevels[currentPollutionLevel] * efficiences[1];
             Metal += MetalGain * PollutionLevels[currentPollutionLevel] * efficiences[2];
             Energy += EnergyGain * PollutionLevels[currentPollutionLevel] * efficiences[3];
             Oil += OilGain * PollutionLevels[currentPollutionLevel] * efficiences[4];
 
             totalWater += WaterGain * PollutionLevels[currentPollutionLevel];
-            totalWood += WoodGain * PollutionLevels[currentPollutionLevel];
             totalMetal += MetalGain * PollutionLevels[currentPollutionLevel];
             totalEnergy += EnergyGain * PollutionLevels[currentPollutionLevel];
             totalOil += OilGain * PollutionLevels[currentPollutionLevel];
@@ -166,6 +165,7 @@ public class PlayerStats : MonoBehaviour
 
             Pollution -= PollutionLoss;
             Population -= PopulationLoss;
+            
 
             Pollution *= (efficiences[0] * efficiences[1] * efficiences[2] * efficiences[3] * efficiences[4]) / 5;
 

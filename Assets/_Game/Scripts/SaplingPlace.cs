@@ -26,7 +26,11 @@ public class SaplingPlace : MonoBehaviour
         if (startTime + holdTime <= Time.time)
         {
             print("Działa");
-            GrowTree();
+            if (PlayerStats.Instance.Water > 5)
+            {
+                PlayerStats.Instance.Water -= 5;
+                GrowTree();
+            }
         }
         print(startTime + " " + holdTime);
     }
@@ -35,7 +39,7 @@ public class SaplingPlace : MonoBehaviour
     {
         if (!isTree)
         {
-            spriteRenderer.enabled = false;
+ 
             isTree = true;
             Tree tree = Instantiate(treePrefab, this.gameObject.transform).GetComponent<Tree>();
             tree.saplingPlace = this;
