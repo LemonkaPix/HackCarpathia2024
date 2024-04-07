@@ -18,22 +18,14 @@ public class SaplingPlace : MonoBehaviour
 
     private void OnMouseDown()
     {
-        startTime = Time.time;
-    }
-
-    private void OnMouseDrag()
-    {
-        if (startTime + holdTime <= Time.time)
-        {
-            print("Działa");
-            if (PlayerStats.Instance.Water > 5)
+         if (PlayerStats.Instance.Water > 5)
             {
                 PlayerStats.Instance.Water -= 5;
                 GrowTree();
             }
-        }
-        print(startTime + " " + holdTime);
+
     }
+    
 
     public void GrowTree()
     {

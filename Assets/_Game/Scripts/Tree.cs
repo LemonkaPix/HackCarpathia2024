@@ -17,6 +17,7 @@ public class Tree : MonoBehaviour
     {
         PlayerStats.Instance.PollutionLoss += state;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        PlayerStats.Instance.OnNewGen.AddListener(ChangeState);
     }
     [Button]
     public void ChangeState()

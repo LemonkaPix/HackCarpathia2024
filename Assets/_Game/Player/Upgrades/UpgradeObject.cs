@@ -10,7 +10,9 @@ public enum UpgradeType
     Mine,
     PowerPlant,
     OilRig,
-    Pollution
+    Pollution,
+    WaterPlant,
+
 }
 
 [System.Serializable]

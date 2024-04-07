@@ -229,6 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeObject: {fileID: 11400000, guid: 0a3e41148eea27949b0ce0cf5588224f, type: 2}
+  upgradeError: {fileID: 0}
   lvlText: {fileID: 7145816725265375870}
   cost: {fileID: 6993400863482035330}
   texts:
@@ -236,6 +237,7 @@ MonoBehaviour:
   - {fileID: 6818716276130366770}
   - {fileID: 2056631298890422845}
   - {fileID: 4012340455551810755}
+  playerStats: {fileID: 0}
 --- !u!1 &2890465004737299422
 GameObject:
   m_ObjectHideFlags: 0

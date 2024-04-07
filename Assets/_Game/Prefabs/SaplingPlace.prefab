@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTree: 0
   treePrefab: {fileID: 2826450099666246621, guid: d6f5daca7d6884dcd808a95d1c91c4a2, type: 3}
+  holdTime: 5
 --- !u!61 &559002217262897256
 BoxCollider2D:
   m_ObjectHideFlags: 0

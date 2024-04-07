@@ -783,12 +783,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeObject: {fileID: 11400000, guid: e8ecd7ac9d319a14fa89a0d1942ebc07, type: 2}
+  upgradeError: {fileID: 0}
   lvlText: {fileID: 4061467304816600927}
   cost: {fileID: 695390930144584690}
   texts:
   - {fileID: 1185794994828809075}
   - {fileID: 4375790473826372056}
   - {fileID: 2199240260241970277}
+  playerStats: {fileID: 0}
 --- !u!1 &2387970342024064302
 GameObject:
   m_ObjectHideFlags: 0
@@ -2329,8 +2331,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 7796830388847409634}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 2.562683, y: 0}
   m_SizeDelta: {x: 35.2973, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2539,7 +2541,7 @@ RectTransform:
   m_Father: {fileID: 1144376897696760033}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

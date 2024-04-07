@@ -17,6 +17,7 @@ public class DialogProperties
     public Color NameColor = Color.white;
     public bool FreezeMovement = false;
     public int FontSize = 36;
+    public int DialogID;
 
     public DialogProperties(string text, string name, Color nameColor, int fontSize = 36, bool freezeMovement = false)
     {
@@ -38,6 +39,20 @@ public class DialogSystem : MonoBehaviour
     [SerializeField] TMP_Text popup;
     [SerializeField] GameObject continueTarget;
 
+    public delegate void DialogEventHandler(int dialogID);
+    private static event DialogEventHandler? _OnDialog;
+    public event DialogEventHandler OnDialog
+    {
+        add
+        {
+            _OnDialog += value;
+        }
+        remove
+        {
+            _OnDialog -= value;
+        }
+    }
+
     [Header("Text Lerp")]
     [SerializeField] bool lerpText;
     [SerializeField] float timeBetweenLetters;
@@ -46,7 +61,7 @@ public class DialogSystem : MonoBehaviour
     TextShake TextShake;
 
     public static DialogSystem instance;
-
+    public int currentDialogID;
     public List<DialogProperties> DialogQueue = new List<DialogProperties>();
 
 
@@ -88,6 +103,7 @@ public class DialogSystem : MonoBehaviour
         dialogName.text = currentDialog.Name;
         dialogName.color = (Color)currentDialog.NameColor;
         dialogText.text = currentDialog.Text;
+        currentDialogID = currentDialog.DialogID;
 
         if (dialogText.text.Contains("<shake>".ToLower().Trim()))
         {
@@ -105,7 +121,7 @@ public class DialogSystem : MonoBehaviour
             // Disable player movement here
             //Player.instance.GetComponent<Movement>().enabled = false;
         }
-
+        _OnDialog.Invoke(currentDialogID);
         dialogName.transform.parent.gameObject.SetActive(true);
         continueTarget.SetActive(true);
 

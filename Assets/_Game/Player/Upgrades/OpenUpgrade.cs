@@ -5,11 +5,9 @@ using UnityEngine;
 public class OpenUpgrade : MonoBehaviour
 {
     [SerializeField] GameObject upgradeWindow;
-    [SerializeField] private PlayerStats playerStats;
-    [SerializeField] private string name;
     private void OnMouseDown()
     {
-        playerStats.upgradeOpen = true;
+        if (TutorialManager.instance.duringTutorial) return;
         upgradeWindow.SetActive(true);
     }   
 }
