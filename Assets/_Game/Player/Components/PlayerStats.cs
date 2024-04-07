@@ -62,6 +62,7 @@ public class PlayerStats : MonoBehaviour
     public int currentPollutionLevel;
     [SerializeField] float[] PollutionLevels;
     [SerializeField] List<float> PollutionForLevel;
+    [SerializeField] GameObject gameOverObject;
 
     [SerializeField] private TMP_Text generationNumText;
     [SerializeField] private Slider pollutionNumText;
@@ -108,6 +109,7 @@ public class PlayerStats : MonoBehaviour
     {
         SoundManager.Instance.PlayClip(SoundManager.Instance.MusicSource,
             SoundManager.Instance.MusicCollection.clips[0], false, 0);
+        gameOverObject.SetActive(true);
     }
 
     public void NewGen()
