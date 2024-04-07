@@ -1,3 +1,5 @@
+using NaughtyAttributes;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -5,6 +7,7 @@ using UnityEngine;
 public class UpgradeUIBehaviour : MonoBehaviour
 {
     [SerializeField] UpgradeObject upgradeObject;
+    [SerializeField] GameObject upgradeError;
     [SerializeField] TMP_Text lvlText;
     [SerializeField] TMP_Text cost;
     [SerializeField] TMP_Text[] texts;
@@ -207,10 +210,28 @@ public class UpgradeUIBehaviour : MonoBehaviour
 
     }
 
+    [Button]
+    public IEnumerator ShowUpgradeError()
+    {
+        upgradeError.SetActive(true);
+        //LeanTween.scale(upgradeError, Vector3.one, .3f);
+        LeanTween.rotate(upgradeError, new Vector3(0f,0f,10f), .4f);
+        yield return new WaitForSeconds(.4f);
+        //LeanTween.rotateX(upgradeError, -10f, .4f);
+    }
+
     public void UpgradeBuilding()
     {
         PlayerUpgrades plrUpg = PlayerUpgrades.instance;
         float materialAmount = GetMaterialAmount(upgradeObject.cost.type);
+
+        if(upgradeObject.type != UpgradeType.Hub && plrUpg.hubLevel < GetBuildingLevel(upgradeObject.type) + 1)
+        {
+            print("Hub level too low");
+            ShowUpgradeError();
+            return;
+        }
+
         switch (upgradeObject.type)
         {
             case UpgradeType.Hub:
