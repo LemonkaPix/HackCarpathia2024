@@ -290,6 +290,8 @@ public class UpgradeUIBehaviour : MonoBehaviour
                 break;
         }
         UpdateUI();
+
+        PlayerUpgrades.instance.CheckBuildings();
     }
 
     void UpdateUI()

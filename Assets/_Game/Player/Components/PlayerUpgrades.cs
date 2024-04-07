@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerUpgrades : MonoBehaviour
 {
     public static PlayerUpgrades instance;
+    [SerializeField] GameObject winnerObject;
 
     public int hubLevel;
     [Header("Water")]
@@ -22,6 +23,14 @@ public class PlayerUpgrades : MonoBehaviour
     private void Awake()
     {
         instance = this;
+    }
+
+    public void CheckBuildings()
+    {
+        if(hubLevel == 10 && Pump == 10 && lumberMill == 10 && Mine == 10 && powerPlant == 10 && waterPowerStation == 10 && OilRig == 10)
+        {
+            print("Game over!!!");
+        }
     }
 
 }
