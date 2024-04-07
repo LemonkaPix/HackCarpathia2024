@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Water Plant
   m_EditorClassIdentifier: 
   name: Power Plant
-  type: 4
+  type: 7
   cost:
     type: 3
     cost:
@@ -24,7 +24,7 @@ MonoBehaviour:
     - 250
   maxLevel: 5
   statIncrease:
-  - type: 4
+  - type: 7
     stats:
     - 1
     - 5

@@ -23,14 +23,22 @@ public class PlayerUpgrades : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        StartCoroutine(CheckBuildings());
     }
 
-    public void CheckBuildings()
+    public IEnumerator CheckBuildings()
     {
-        if(hubLevel == 5 && Pump == 5 && lumberMill == 5 && Mine == 5 && powerPlant == 5 && waterPowerStation == 5 && OilRig == 5)
+        while (true)
         {
-            print("Game over!!!");
+            if (hubLevel == 5 && Pump == 5 && lumberMill == 5 && Mine == 5 && powerPlant == 5 && waterPowerStation == 5 && OilRig == 5)
+            {
+                print("Game over!!!");
+                winnerObject.SetActive(true);
+                yield break;
+            }
+            yield return new WaitForSeconds(.2f);
         }
+
     }
 
 }

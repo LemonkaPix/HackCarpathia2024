@@ -9545,12 +9545,7 @@ MonoBehaviour:
   - {fileID: 1077112290}
   - {fileID: 586248952}
   - {fileID: 630317593}
-  efficiences:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  efficiency: 0.75
   Water: 0
   WaterGain: 1
   WaterLoss: 0
@@ -35908,6 +35903,34 @@ PrefabInstance:
       propertyPath: upgradeError
       value: 
       objectReference: {fileID: 1602890440}
+    - target: {fileID: 5372911335627636828, guid: 5e0a2f9765750894a94d38509c877e6e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5372911335627636828, guid: 5e0a2f9765750894a94d38509c877e6e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5372911335627636828, guid: 5e0a2f9765750894a94d38509c877e6e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 9165938702360897989}
+    - target: {fileID: 5372911335627636828, guid: 5e0a2f9765750894a94d38509c877e6e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5372911335627636828, guid: 5e0a2f9765750894a94d38509c877e6e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeBuilding
+      objectReference: {fileID: 0}
+    - target: {fileID: 5372911335627636828, guid: 5e0a2f9765750894a94d38509c877e6e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpgradeUIBehaviour, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5372911335627636828, guid: 5e0a2f9765750894a94d38509c877e6e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6174881131589886408, guid: 5e0a2f9765750894a94d38509c877e6e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -35991,6 +36014,10 @@ PrefabInstance:
     - target: {fileID: 8991274979869330975, guid: 5e0a2f9765750894a94d38509c877e6e, type: 3}
       propertyPath: m_Name
       value: WaterPlantUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 8991274979869330975, guid: 5e0a2f9765750894a94d38509c877e6e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36138,6 +36165,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6174881131589886408, guid: 5e0a2f9765750894a94d38509c877e6e, type: 3}
   m_PrefabInstance: {fileID: 4487803929504908719}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9165938702360897989 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3184967248942995942, guid: 5e0a2f9765750894a94d38509c877e6e, type: 3}
+  m_PrefabInstance: {fileID: 4487803929504908719}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8153195401096109747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26ff4503680abd140ab5cab20f15416b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

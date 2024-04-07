@@ -24,7 +24,7 @@ public class PlayerStats : MonoBehaviour
     public float totalEnergy { get; private set; } = 0f;
     public float totalOil { get; private set; } = 0f;
 
-    public float[] efficiences = new float[5];
+    public float efficiency = .75f;
 
 
     [Header("Materials")] [Header("Water")]
@@ -81,11 +81,7 @@ public class PlayerStats : MonoBehaviour
         }
 
         StartCoroutine(GameTick());
-        efficiences[0] = 1f;
-        efficiences[1] = 1f;
-        efficiences[2] = 0.75f;
-        efficiences[3] = 0.75f;
-        efficiences[4] = 0.75f;
+        efficiency = .75f;
         generationNumText.text = Generation.ToString();
     }
 
@@ -129,7 +125,7 @@ public class PlayerStats : MonoBehaviour
     {
         if (id != -1)
         {
-            efficiences[id] = value;
+            efficiency = value;
         }
     }
 
@@ -139,11 +135,11 @@ public class PlayerStats : MonoBehaviour
         {
             yield return new WaitForSeconds(GameTickTime);
 
-            Water += WaterGain * PollutionLevels[currentPollutionLevel] * efficiences[0];
-            Wood += WoodGain * PollutionLevels[currentPollutionLevel] * efficiences[1];
-            Metal += MetalGain * PollutionLevels[currentPollutionLevel] * efficiences[2];
-            Energy += EnergyGain * PollutionLevels[currentPollutionLevel] * efficiences[3];
-            Oil += OilGain * PollutionLevels[currentPollutionLevel] * efficiences[4];
+            Water += WaterGain * PollutionLevels[currentPollutionLevel] * efficiency;
+            Wood += WoodGain * PollutionLevels[currentPollutionLevel] * efficiency;
+            Metal += MetalGain * PollutionLevels[currentPollutionLevel] * efficiency;
+            Energy += EnergyGain * PollutionLevels[currentPollutionLevel] * efficiency;
+            Oil += OilGain * PollutionLevels[currentPollutionLevel] * efficiency;
 
             totalWater += WaterGain * PollutionLevels[currentPollutionLevel];
             totalWood += WoodGain * PollutionLevels[currentPollutionLevel];
@@ -177,7 +173,7 @@ public class PlayerStats : MonoBehaviour
             Pollution -= PollutionLoss;
             Population -= PopulationLoss;
 
-            Pollution *= (efficiences[0] * efficiences[1] * efficiences[2] * efficiences[3] * efficiences[4]) / 5;
+            PollutionGain *= efficiency + .25f;
 
             if (Population <= 0)
             {

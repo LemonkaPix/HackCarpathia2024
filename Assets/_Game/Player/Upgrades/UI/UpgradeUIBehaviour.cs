@@ -21,7 +21,9 @@ public class UpgradeUIBehaviour : MonoBehaviour
         "Current Energy/s: ",
         "Current Metal/s: ",
         "Current Oil/s: ",
-        "Polution loss: "
+        "Polution loss: ",
+        "Current Energy/s: ",
+
     };
 
     string[] usageText = new string[]
@@ -32,7 +34,9 @@ public class UpgradeUIBehaviour : MonoBehaviour
         "Energy usage: ",
         "Metal usage: ",
         "Oil usage: ",
-        "Polution loss: "
+        "Polution loss: ",
+        "Energy usage: ",
+
     };
 
     string[] buyText = new string[]
@@ -42,7 +46,9 @@ public class UpgradeUIBehaviour : MonoBehaviour
          " Wood",
          " Energy",
          " Metal",
-         " Oil"
+         " Oil",
+         " Energy",
+
     };
 
     #region TextReturns
@@ -73,6 +79,9 @@ public class UpgradeUIBehaviour : MonoBehaviour
             case UpgradeType.Pollution:
                 index = 6;
                 break;
+            case UpgradeType.WaterPlant:
+                index = 7;
+                break;
         }
         return index;
 }
@@ -99,6 +108,9 @@ public class UpgradeUIBehaviour : MonoBehaviour
                 break;
             case UpgradeType.OilRig:
                 amount = PlayerStats.Instance.Oil;
+                break;
+            case UpgradeType.WaterPlant:
+                amount = PlayerStats.Instance.Energy;
                 break;
         }
         return amount;
@@ -128,6 +140,9 @@ public class UpgradeUIBehaviour : MonoBehaviour
             case UpgradeType.OilRig:
                 level = PlayerUpgrades.instance.OilRig;
                 break;
+            case UpgradeType.WaterPlant:
+                level = PlayerUpgrades.instance.waterPowerStation;
+                break;
         }
         return level;
     }
@@ -156,6 +171,9 @@ public class UpgradeUIBehaviour : MonoBehaviour
             case UpgradeType.OilRig:
                 PlayerStats.Instance.Oil -= value;
                 break;
+            case UpgradeType.WaterPlant:
+                PlayerStats.Instance.Energy -= value;
+                break;
         }
     }
 
@@ -176,8 +194,8 @@ public class UpgradeUIBehaviour : MonoBehaviour
                 else PlayerStats.Instance.WoodLoss = value; 
                 break;
             case UpgradeType.PowerPlant:
-                if (isGain) PlayerStats.Instance.EnergyGain = value;
-                else PlayerStats.Instance.EnergyLoss = value; 
+                if (isGain) PlayerStats.Instance.EnergyGain += value;
+                else PlayerStats.Instance.EnergyLoss += value; 
                 break;
             case UpgradeType.Mine:
                 if (isGain) PlayerStats.Instance.MetalGain = value;
@@ -191,6 +209,10 @@ public class UpgradeUIBehaviour : MonoBehaviour
                 if(isGain) PlayerStats.Instance.PollutionGain = value;
                 else PlayerStats.Instance.PopulationLoss = value;
                 break;
+            case UpgradeType.WaterPlant:
+                if (isGain) PlayerStats.Instance.EnergyGain += value;
+                else PlayerStats.Instance.EnergyLoss += value;
+                break;
         }
     }
 
@@ -199,6 +221,7 @@ public class UpgradeUIBehaviour : MonoBehaviour
     {
         for (int i = 0; i < upgradeObject.statIncrease.Count; i++)
         {
+            if (level > upgradeObject.statIncrease.Count) level = upgradeObject.statIncrease.Count - 1;
             UpdateGains(upgradeObject.statIncrease[i].type, true, upgradeObject.statIncrease[i].stats[level]);
         }
 
@@ -206,6 +229,7 @@ public class UpgradeUIBehaviour : MonoBehaviour
 
         for (int i = 0; i < upgradeObject.statUsage.Count; i++)
         {
+            if (level > upgradeObject.statIncrease.Count) level = upgradeObject.statIncrease.Count - 1;
             UpdateGains(upgradeObject.statUsage[i].type,false, upgradeObject.statUsage[i].stats[level]);
         }
 
@@ -288,10 +312,18 @@ public class UpgradeUIBehaviour : MonoBehaviour
                     UpdateBuildingStats(plrUpg.OilRig);
                 }
                 break;
+            case UpgradeType.WaterPlant:
+                if (plrUpg.waterPowerStation < upgradeObject.maxLevel && materialAmount > upgradeObject.cost.cost[plrUpg.waterPowerStation])
+                {
+                    RemoveValue(upgradeObject.type, upgradeObject.cost.cost[plrUpg.waterPowerStation]);
+                    plrUpg.waterPowerStation++;
+
+                    UpdateBuildingStats(plrUpg.waterPowerStation);
+                }
+                break;
         }
         UpdateUI();
 
-        PlayerUpgrades.instance.CheckBuildings();
     }
 
     void UpdateUI()
