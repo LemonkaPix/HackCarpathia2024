@@ -69,6 +69,9 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] float[] PollutionLevels;
     [SerializeField] List<float> PollutionForLevel;
 
+    [SerializeField] private TMP_Text generationNumText;
+    
+
     private int id = -1;
 
     private void Awake()
@@ -84,6 +87,7 @@ public class PlayerStats : MonoBehaviour
         efficiences[2] = 0.75f;
         efficiences[3] = 0.75f;
         efficiences[4] = 0.75f;
+        generationNumText.text = Generation.ToString();
     }
     public void StartGameTick()
     {
@@ -97,13 +101,18 @@ public class PlayerStats : MonoBehaviour
 
     public void NewGen()
     {
-
         int level = (int)PollutionForLevel.Last(x => x <= Pollution);
         level = PollutionForLevel.IndexOf(level);
 
         currentPollutionLevel = level;
         Generation++;
+        generationNumText.text = Generation.ToString();
+        PlayerStats.Instance.Start();
         genTime = 0f;
+        
+        Timer.Instance.generationTime = 10;
+        Timer.Instance.timeText.text = Timer.Instance.generationTime.ToString();
+        StartCoroutine(Timer.Instance.TimeCorotuine());
     }
 
     public void ChangeEfficiency(float value)
