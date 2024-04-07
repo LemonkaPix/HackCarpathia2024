@@ -14,6 +14,7 @@ public class PlayerStats : MonoBehaviour
     public float GameTickTime = 1f;
     public float GenerationTimer = 120f;
     float genTime = 0f;
+    public bool upgradeOpen = false;
     [SerializeField] private TMP_Text[] statsText;
     public float gameTime { get; private set; } = 0f;
     

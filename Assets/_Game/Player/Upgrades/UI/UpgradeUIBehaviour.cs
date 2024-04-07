@@ -11,6 +11,7 @@ public class UpgradeUIBehaviour : MonoBehaviour
     [SerializeField] TMP_Text lvlText;
     [SerializeField] TMP_Text cost;
     [SerializeField] TMP_Text[] texts;
+    [SerializeField] private PlayerStats playerStats;
 
     string[] increaseText = new string[]
     {
@@ -338,6 +339,7 @@ public class UpgradeUIBehaviour : MonoBehaviour
         LeanTween.scale(gameObject, Vector3.zero, 0.2f);
 
         Invoke(nameof(disableGameObject), 0.3f);
+        playerStats.upgradeOpen = false;
     }
 
     void disableGameObject()
