@@ -27,10 +27,10 @@ MonoBehaviour:
   - type: 2
     stats:
     - 1
+    - 5
+    - 10
     - 15
     - 20
-    - 25
-    - 35
   pollutionLevels: []
   statUsage:
   - type: 6

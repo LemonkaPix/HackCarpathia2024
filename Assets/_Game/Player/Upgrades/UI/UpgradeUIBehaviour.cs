@@ -182,7 +182,12 @@ public class UpgradeUIBehaviour : MonoBehaviour
         switch (type)
         {
             case UpgradeType.Hub:
-                if(isGain) PlayerStats.Instance.PopulationGain = value;
+                if (isGain)
+                {
+                    Debug.Log(value);
+                    PlayerStats.Instance.PopulationGain = value;
+                }
+
                 else PlayerStats.Instance.PopulationLoss = value;
                 break;
             case UpgradeType.Pump:
