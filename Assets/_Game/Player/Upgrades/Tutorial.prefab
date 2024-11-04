@@ -1,0 +1,184 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &476680642431046127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2305535997514447221}
+  - component: {fileID: 3376110669193839065}
+  m_Layer: 0
+  m_Name: TutorialContinue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2305535997514447221
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476680642431046127}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 415883576792478547}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3376110669193839065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476680642431046127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0ccfe85a1ce47c4a82923cb1080d3b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogs:
+  - Name: Mayor Ziutek
+    Text: Great work! Upgrading your facilities is the key to developing your city.
+      Now let me show you around the other facilities
+    NameColor: {r: 0, g: 0.827451, b: 1, a: 1}
+    FreezeMovement: 0
+    FontSize: 0
+    DialogID: 4
+  - Name: Mayor Ziutek
+    Text: This right here is your <shake><color=#FFFF00>Water pump.</color></shake>
+      It generates water for your city.
+    NameColor: {r: 0, g: 0.827451, b: 1, a: 1}
+    FreezeMovement: 0
+    FontSize: 0
+    DialogID: 5
+  - Name: Mayor Ziutek
+    Text: This facility here is your <shake><color=#FFFF00> Water Power Plant.</color></shake>
+      It generates Energy using water for your city.
+    NameColor: {r: 0, g: 0.827451, b: 1, a: 1}
+    FreezeMovement: 0
+    FontSize: 0
+    DialogID: 6
+  - Name: Mayor Ziutek
+    Text: This building here is your <shake><color=#FFFF00> Mine.</color></shake>
+      It generates Metal for your city.
+    NameColor: {r: 0, g: 0.827451, b: 1, a: 1}
+    FreezeMovement: 0
+    FontSize: 0
+    DialogID: 7
+  - Name: Mayor Ziutek
+    Text: This facility is a <shake> <color=#FFFF00>Power Plant.</color></shake>
+      It generates Energy for your city from oil.
+    NameColor: {r: 0, g: 0.827451, b: 1, a: 1}
+    FreezeMovement: 0
+    FontSize: 0
+    DialogID: 8
+  - Name: Mayor Ziutek
+    Text: You're quite lucky! Your city has an <shake> <color=#FFFF00>Oil Rig.</color>
+      </shake>It generates Oil for your city.
+    NameColor: {r: 0, g: 0.827451, b: 1, a: 1}
+    FreezeMovement: 0
+    FontSize: 0
+    DialogID: 9
+  - Name: Mayor Ziutek
+    Text: This facility is a <shake><color=#FFFF00>Lumber Mill.</color></shake> It
+      generates Wood for your city.
+    NameColor: {r: 0, g: 0.827451, b: 1, a: 1}
+    FreezeMovement: 0
+    FontSize: 0
+    DialogID: 10
+  - Name: Mayor Ziutek
+    Text: Oh, I forgot! You can plant trees and harvest them for wood using these<shake><color=#FFFF00>Sapling
+      Places.</color></shake> The trees will grow up after some years.
+    NameColor: {r: 0, g: 0.827451, b: 1, a: 1}
+    FreezeMovement: 0
+    FontSize: 0
+    DialogID: 11
+  - Name: Mayor Ziutek
+    Text: Remember to carefully manage your resources and make sure your population
+      doesn't die out! If it happens it's<shake><color=#FF0000> game over </color></shake>
+    NameColor: {r: 0, g: 0.827451, b: 1, a: 1}
+    FreezeMovement: 0
+    FontSize: 0
+    DialogID: 12
+  - Name: Mayor Ziutek
+    Text: Alright, that's it for me. Remember to be ECO for me!
+    NameColor: {r: 0, g: 0.827451, b: 1, a: 1}
+    FreezeMovement: 0
+    FontSize: 0
+    DialogID: 13
+--- !u!1 &4664052986615505319
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 415883576792478547}
+  - component: {fileID: 5643945084139245138}
+  m_Layer: 0
+  m_Name: Tutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &415883576792478547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4664052986615505319}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.27079996, y: -5.8235517, z: -4.4293146}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2305535997514447221}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5643945084139245138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4664052986615505319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0ccfe85a1ce47c4a82923cb1080d3b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogs:
+  - Name: Mayor Ziutek
+    Text: Hello and welcome to your own city of  <shake><color=#FFFF00>Cityville!</color></shake>
+      Let me brief you around the city so you have an easier time managing it.
+    NameColor: {r: 0, g: 0.8274088, b: 1, a: 1}
+    FreezeMovement: 0
+    FontSize: 0
+    DialogID: 1
+  - Name: Mayor Ziutek
+    Text: The building you're currently looking at is your <shake><color=#FFFF00>Hub.</color></shake>
+      Your hub acts like a city centre and is the main building of your city. Because
+      of that <color=#FF0000>you cannot upgrade other buildings higher than the hub.</color>
+    NameColor: {r: 0, g: 0.8274088, b: 1, a: 1}
+    FreezeMovement: 0
+    FontSize: 0
+    DialogID: 2
+  - Name: Mayor Ziutek
+    Text: Let's try <color=#FFFF00> upgrading your hub! You can do so by clicking
+      on it.</color>
+    NameColor: {r: 0, g: 0.8274088, b: 1, a: 1}
+    FreezeMovement: 0
+    FontSize: 0
+    DialogID: 3

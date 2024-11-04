@@ -182,7 +182,12 @@ public class UpgradeUIBehaviour : MonoBehaviour
         switch (type)
         {
             case UpgradeType.Hub:
-                if(isGain) PlayerStats.Instance.PopulationGain = value;
+                if (isGain)
+                {
+                    Debug.Log(value);
+                    PlayerStats.Instance.PopulationGain = value;
+                }
+
                 else PlayerStats.Instance.PopulationLoss = value;
                 break;
             case UpgradeType.Pump:
@@ -261,7 +266,7 @@ public class UpgradeUIBehaviour : MonoBehaviour
             case UpgradeType.Hub:
                 if (plrUpg.hubLevel < upgradeObject.maxLevel && materialAmount > upgradeObject.cost.cost[plrUpg.hubLevel])
                 {
-                    RemoveValue(upgradeObject.type, upgradeObject.cost.cost[plrUpg.hubLevel]);
+                    RemoveValue(upgradeObject.cost.type, upgradeObject.cost.cost[plrUpg.hubLevel]);
                     plrUpg.hubLevel++;
 
                     UpdateBuildingStats(plrUpg.hubLevel);
@@ -270,7 +275,7 @@ public class UpgradeUIBehaviour : MonoBehaviour
             case UpgradeType.Pump:
                 if (plrUpg.Pump < upgradeObject.maxLevel && materialAmount > upgradeObject.cost.cost[plrUpg.Pump])
                 {
-                    RemoveValue(upgradeObject.type, upgradeObject.cost.cost[plrUpg.Pump]);
+                    RemoveValue(upgradeObject.cost.type, upgradeObject.cost.cost[plrUpg.Pump]);
                     plrUpg.Pump++;
 
                     UpdateBuildingStats(plrUpg.Pump);
@@ -279,7 +284,7 @@ public class UpgradeUIBehaviour : MonoBehaviour
             case UpgradeType.Lumber:
                 if (plrUpg.lumberMill < upgradeObject.maxLevel && materialAmount > upgradeObject.cost.cost[plrUpg.lumberMill])
                 {
-                    RemoveValue(upgradeObject.type, upgradeObject.cost.cost[plrUpg.lumberMill]);
+                    RemoveValue(upgradeObject.cost.type, upgradeObject.cost.cost[plrUpg.lumberMill]);
                     plrUpg.lumberMill++;
 
                     UpdateBuildingStats(plrUpg.lumberMill);
@@ -288,7 +293,7 @@ public class UpgradeUIBehaviour : MonoBehaviour
             case UpgradeType.PowerPlant:
                 if (plrUpg.powerPlant < upgradeObject.maxLevel && materialAmount > upgradeObject.cost.cost[plrUpg.powerPlant])
                 {
-                    RemoveValue(upgradeObject.type, upgradeObject.cost.cost[plrUpg.powerPlant]);
+                    RemoveValue(upgradeObject.cost.type, upgradeObject.cost.cost[plrUpg.powerPlant]);
                     plrUpg.powerPlant++;
 
                     UpdateBuildingStats(plrUpg.powerPlant);
@@ -297,7 +302,7 @@ public class UpgradeUIBehaviour : MonoBehaviour
             case UpgradeType.Mine:
                 if (plrUpg.Mine < upgradeObject.maxLevel && materialAmount > upgradeObject.cost.cost[plrUpg.Mine])
                 {
-                    RemoveValue(upgradeObject.type, upgradeObject.cost.cost[plrUpg.Mine]);
+                    RemoveValue(upgradeObject.cost.type, upgradeObject.cost.cost[plrUpg.Mine]);
                     plrUpg.Mine++;
 
                     UpdateBuildingStats(plrUpg.Mine);
@@ -306,7 +311,7 @@ public class UpgradeUIBehaviour : MonoBehaviour
             case UpgradeType.OilRig:
                 if (plrUpg.OilRig < upgradeObject.maxLevel && materialAmount > upgradeObject.cost.cost[plrUpg.OilRig])
                 {
-                    RemoveValue(upgradeObject.type, upgradeObject.cost.cost[plrUpg.OilRig]);
+                    RemoveValue(upgradeObject.cost.type, upgradeObject.cost.cost[plrUpg.OilRig]);
                     plrUpg.OilRig++;
 
                     UpdateBuildingStats(plrUpg.OilRig);
@@ -315,7 +320,7 @@ public class UpgradeUIBehaviour : MonoBehaviour
             case UpgradeType.WaterPlant:
                 if (plrUpg.waterPowerStation < upgradeObject.maxLevel && materialAmount > upgradeObject.cost.cost[plrUpg.waterPowerStation])
                 {
-                    RemoveValue(upgradeObject.type, upgradeObject.cost.cost[plrUpg.waterPowerStation]);
+                    RemoveValue(upgradeObject.cost.type, upgradeObject.cost.cost[plrUpg.waterPowerStation]);
                     plrUpg.waterPowerStation++;
 
                     UpdateBuildingStats(plrUpg.waterPowerStation);
