@@ -9974,10 +9974,10 @@ MonoBehaviour:
   - 800
   - 900
   - 100
-  gameOverObject: {fileID: 0}
+  gameOverObject: {fileID: 4445889186783832154, guid: caf55a372a0655a4daaef121a791263f, type: 3}
   generationNumText: {fileID: 967498595}
   pollutionNumText: {fileID: 1580531197}
-  upgradeObject: {fileID: 0}
+  upgradeObject: {fileID: 11400000, guid: 0a3e41148eea27949b0ce0cf5588224f, type: 2}
   OnNewGen:
     m_PersistentCalls:
       m_Calls: []
